@@ -1,7 +1,7 @@
 # Binds each user's OIDC identity (as the apiserver will see it: the
 # preferred_username claim, prefixed per var.oidc_username_prefix) to a
 # built-in ClusterRole. Requires the Talos apiServer OIDC patch (see
-# proxmox-tofu/talos-oidc-patch.yaml) to be applied — until then the
+# proxmox-tofu/talos-oidc-patch.yaml) to be applied , until then the
 # apiserver doesn't trust OIDC tokens at all, so these bindings have
 # nothing to attach to.
 resource "kubernetes_cluster_role_binding" "user" {

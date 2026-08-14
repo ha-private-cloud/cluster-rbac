@@ -13,12 +13,12 @@ Two things happen from the same `users` list:
 ## Why this only works with the apiserver OIDC patch
 
 RBAC subjects here reference `oidc:<username>` because that's what the
-Talos apiserver will present once it trusts Authentik as an OIDC issuer —
+Talos apiserver will present once it trusts Authentik as an OIDC issuer ,
 see [`../proxmox-tofu/talos-oidc-patch.yaml`](../proxmox-tofu/talos-oidc-patch.yaml)
 and its README section. Until that patch is applied to the control-plane
 node, the apiserver doesn't authenticate OIDC tokens at all, so logging in
 via Headlamp will fail with 401s rather than land you in an
-under-permissioned account — these bindings just have nothing to attach to
+under-permissioned account , these bindings just have nothing to attach to
 yet.
 
 `oidc_username_prefix` here must match `--oidc-username-prefix` in that
@@ -47,5 +47,5 @@ directly, but the cluster needs to exist first via `proxmox-tofu`).
   changes)
 - `view` → built-in `view` ClusterRole (read-only)
 
-Custom ClusterRoles aren't supported by `role` yet — add one here and
+Custom ClusterRoles aren't supported by `role` yet , add one here and
 extend `rbac.tf`'s `role_ref` mapping if you need finer-grained access.
