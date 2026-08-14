@@ -27,7 +27,10 @@ presents.
 
 ## Usage
 
+All `.tf` files live under `tofu/`, not the repo root:
+
 ```bash
+cd tofu
 cp terraform.tfvars.example terraform.tfvars   # edit the users list
 tofu init
 tofu plan
